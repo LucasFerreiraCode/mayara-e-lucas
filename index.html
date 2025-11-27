@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lucas & Mayara ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TELA INICIAL -->
+    <div id="telaInicial" class="tela-inicial">
+        <div class="box-inicial">
+            <h1>Lucas & Amor</h1>
+            <p>Uma história feita de momentos inesquecíveis ❤️</p>
+            <button id="btnEntrar">Entrar</button>
+        </div>
+    </div>
+
+    <!-- MÚSICA -->
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- SITE -->
+    <div id="site" style="display:none;">
+
+        <header>
+            <h1>Lucas & Mayara</h1>
+            <p>Juntos há:</p>
+            <div id="contador"></div>
+        </header>
+
+        <main class="galeria">
+            <div class="foto" onclick="abrirImagem(this)">
+                <img src="img1.jpg">
+                <span>O começo de tudo 💕</span>
+            </div>
+
+            <div class="foto" onclick="abrirImagem(this)">
+                <img src="img2.jpg">
+                <span>Seu sorriso mudou tudo 😍</span>
+            </div>
+
+            <div class="foto" onclick="abrirImagem(this)">
+                <img src="img3.jpg">
+                <span>Momentos eternos ❤️</span>
+            </div>
+
+            <div class="foto" onclick="abrirImagem(this)">
+                <img src="img4.jpg">
+                <span>Meu lugar é ao seu lado 💑</span>
+            </div>
+        </main>
+
+        <div class="area-surpresa">
+            <button onclick="mostrarSurpresa()">Clique aqui 💌</button>
+        </div>
+
+        <!-- MODAL FOTO -->
+        <div class="modal" id="modal">
+            <span class="fechar" onclick="fecharImagem()">✖</span>
+            <img id="imagemGrande">
+        </div>
+
+        <!-- MODAL SURPRESA -->
+        <div class="modal" id="modalSurpresa">
+            <div class="caixa-surpresa">
+                <span class="fechar" onclick="fecharSurpresa()">✖</span>
+                <h2>Mensagem pra você ❤️</h2>
+                <p>
+                    Amor, cada segundo ao seu lado é um capítulo lindo da nossa história.
+                    Eu te amo hoje, amanhã e para sempre. 💕
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Feito com ❤️ por Lucas</p>
+        </footer>
+
+    </div>
+
+    <script src="namoro.js"></script>
+</body>
+
+</html>
