@@ -80,6 +80,21 @@ body {
     min-height: 100vh;
 }
 
+/* Safe area support for iPhone notch */
+@supports(padding: env(safe-area-inset-top)) {
+    body {
+        padding-top: env(safe-area-inset-top);
+    }
+    #site {
+        padding-top: calc(30px + env(safe-area-inset-top));
+    }
+}
+
+/* Fallback: smaller top padding on iPhone-ish small screens */
+@media (max-width: 480px) {
+    #site { padding-top: 12px; }
+}
+
 #site {
     display: block;
     padding: 30px 16px 60px;
@@ -215,9 +230,87 @@ button {
     font-family: inherit;
 }
 
-@media (max-width: 600px) {
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+    }
+    
+    #site {
+        padding: 24px 12px 50px;
+    }
+}
+
+@media (max-width: 768px) {
     .box-inicial {
-        padding: 28px;
+        padding: 32px;
+    }
+    
+    .box-inicial h1 {
+        font-size: 32px;
+    }
+    
+    .box-inicial p {
+        font-size: 15px;
+    }
+    
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+    }
+    
+    .foto img {
+        height: 180px;
+    }
+    
+    header h1 {
+        font-size: 28px;
+    }
+    
+    .modal-prev,
+    .modal-next {
+        font-size: 18px;
+        padding: 10px 12px;
+    }
+    
+    #imagemGrande {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+    
+    .modal .fechar {
+        font-size: 24px;
+        top: 14px;
+        right: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .box-inicial {
+        padding: 24px;
+    }
+
+    .box-inicial h1 {
+        font-size: 28px;
+    }
+    
+    .box-inicial p {
+        font-size: 14px;
+    }
+    
+    .box-inicial button {
+        padding: 12px 32px;
+        font-size: 16px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
     }
 
     .foto img {
@@ -225,6 +318,109 @@ button {
     }
 
     header h1 {
-        font-size: 26px;
+        font-size: 24px;
+    }
+    
+    header p {
+        font-size: 13px;
+    }
+    
+    #contador {
+        font-size: 13px;
+    }
+    
+    .modal-prev,
+    .modal-next {
+        font-size: 16px;
+        padding: 8px 10px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .modal .fechar {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 22px;
+    }
+    
+    #imagemGrande {
+        max-width: 98%;
+        max-height: 70vh;
+    }
+    
+    .modal-caption {
+        bottom: 18px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    .area-surpresa button {
+        padding: 8px 14px;
+        font-size: 15px;
+    }
+    
+    #modalSurpresa .caixa-surpresa {
+        padding: 20px;
+        max-width: calc(100% - 32px);
+    }
+    
+    #modalSurpresa .caixa-surpresa h2 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #site {
+        padding: 8px 10px 30px;
+    }
+    
+    .box-inicial {
+        padding: 20px;
+    }
+    
+    .box-inicial h1 {
+        font-size: 24px;
+    }
+    
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 8px;
+    }
+    
+    .foto img {
+        height: 130px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .modal-prev,
+    .modal-next {
+        font-size: 14px;
+        padding: 6px 8px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+    
+    .modal .fechar {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    #imagemGrande {
+        max-width: 100%;
+        max-height: 65vh;
     }
 }

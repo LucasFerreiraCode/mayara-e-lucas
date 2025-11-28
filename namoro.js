@@ -33,6 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (musica) {
                 musica.play();
             }
+            // garantir que a página vá para o topo em dispositivos móveis
+            try {
+                // 'smooth' works well on iPhone Safari and gives a natural feel
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            } catch (e) {
+                window.scrollTo(0, 0);
+            }
+            // dar foco no container principal para melhorar navegação por teclado
+            try {
+                site.setAttribute('tabindex', '-1');
+                site.focus();
+            } catch (e) {}
         });
     }
 });
