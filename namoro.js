@@ -1,4 +1,6 @@
+// ===========================
 // DATA DE INÍCIO DO NAMORO
+// ===========================
 const dataInicio = new Date("2025-02-11T00:00:00");
 
 function atualizarContador() {
@@ -18,38 +20,49 @@ function atualizarContador() {
 setInterval(atualizarContador, 1000);
 atualizarContador();
 
-// BOTÃO ENTRAR (FORMA SEGURA)
+
+// ===========================
+// BOTÃO ENTRAR + PLAYER YOUTUBE
+// ===========================
 document.addEventListener("DOMContentLoaded", () => {
     const botao = document.getElementById("btnEntrar");
     const telaInicial = document.getElementById("telaInicial");
     const site = document.getElementById("site");
-    const musica = document.getElementById("musica");
+    const ytFrame = document.getElementById("ytFrame");
 
     if (botao) {
         botao.addEventListener("click", () => {
+
+            // --- MOSTRAR SITE ---
             telaInicial.style.display = "none";
             site.style.display = "block";
 
-            if (musica) {
-                musica.play();
+            // --- INICIAR MÚSICA DO YOUTUBE ---
+            if (ytFrame) {
+                ytFrame.src =
+                    "https://www.youtube.com/embed/nGGxZe3I2DE?autoplay=1&loop=1&playlist=nGGxZe3I2DE";
             }
-            // garantir que a página vá para o topo em dispositivos móveis
+
+            // --- SCROLL PARA TOPO ---
             try {
-                // 'smooth' works well on iPhone Safari and gives a natural feel
                 window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
             } catch (e) {
                 window.scrollTo(0, 0);
             }
-            // dar foco no container principal para melhorar navegação por teclado
+
+            // --- ACESSIBILIDADE ---
             try {
-                site.setAttribute('tabindex', '-1');
+                site.setAttribute("tabindex", "-1");
                 site.focus();
-            } catch (e) {}
+            } catch (e) { }
         });
     }
 });
 
+
+// ===========================
 // FOTO EM TELA CHEIA
+// ===========================
 function abrirImagem(elemento) {
     const img = elemento.querySelector("img").src;
     document.getElementById("modal").style.display = "flex";
@@ -60,7 +73,10 @@ function fecharImagem() {
     document.getElementById("modal").style.display = "none";
 }
 
+
+// ===========================
 // SURPRESA
+// ===========================
 function mostrarSurpresa() {
     document.getElementById("modalSurpresa").style.display = "flex";
 }
