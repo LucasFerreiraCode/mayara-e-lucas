@@ -73,10 +73,11 @@
 /* SITE PRINCIPAL */
 body {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(180deg, #fff5f7 0%, #fff 40%);
-    color: #222;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
 }
 
 #site {
@@ -98,12 +99,12 @@ header h1 {
 
 header p {
     margin: 0 0 6px 0;
-    color: #666;
+    color: #ccc;
 }
 
 #contador {
     font-weight: 600;
-    color: #b71c1c;
+    color: #ff0033;
     margin-bottom: 14px;
 }
 
@@ -153,11 +154,12 @@ header p {
 .area-surpresa button {
     padding: 10px 16px;
     border-radius: 10px;
-    border: 1px solid #ff6b6b;
-    background: #fff;
-    color: #b71c1c;
+    border: 1px solid #ff0033;
+    background: linear-gradient(135deg, #ff0033, #ff4d4d);
+    color: white;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(183,28,28,0.06);
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(255,0,51,0.3);
 }
 
 /* MODAIS */
@@ -199,12 +201,12 @@ header p {
 
 #modalSurpresa .caixa-surpresa h2 {
     margin-top: 0;
-    color: #b71c1c;
+    color: #ff0033;
 }
 
 footer {
     margin-top: 28px;
-    color: #666;
+    color: #ccc;
     text-align: center;
 }
 
