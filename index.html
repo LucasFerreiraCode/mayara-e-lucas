@@ -19,9 +19,7 @@
         </div>
     </div>
 
-
-    <!-- (OPCIONAL) AUDIO LOCAL — DESATIVADO POR ENQUANTO -->
-    
+    <!-- MÚSICA -->
     <audio id="musica" loop>
         <source src="./musica.mp3/Seja Para Mim Ao Vivo Em São Paulo.mp3" type="audio/mpeg">
     </audio>
@@ -35,12 +33,13 @@
             <div id="contador"></div>
         </header>
 
-        <!-- GALERIA COM 20 FOTOS -->
+        <!-- GALERIA -->
         <main class="galeria">
 
+            <!-- FOTOS -->
             <div class="foto" onclick="abrirImagem(this)">
                 <img src="./Img.amor/foto1.jpeg">
-                <span> O começo de tudo 💕</span>
+                <span>O começo de tudo 💕</span>
             </div>
 
             <div class="foto" onclick="abrirImagem(this)">
@@ -138,6 +137,42 @@
                 <span>Nosso amor é infinito ♾️</span>
             </div>
 
+            <!-- VÍDEOS (AUTOPLAY EM LOOP) -->
+            <div class="foto video">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./videos/nos-no-costao.mp4" type="video/mp4">
+                </video>
+                <span>Nosso dia no costão 🌊</span>
+            </div>
+
+            <div class="foto video">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./videos/nos-na-praia.mp4" type="video/mp4">
+                </video>
+                <span>Dia na praia 🏖️</span>
+            </div>
+
+            <div class="foto video">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./videos/andando-de-moto.mp4" type="video/mp4">
+                </video>
+                <span>Passeio de moto 🏍️</span>
+            </div>
+
+            <div class="foto video">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./videos/nos-furando-parede.mp4" type="video/mp4">
+                </video>
+                <span>Construindo sonhos 🛠️❤️</span>
+            </div>
+
+            <div class="foto video">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./videos/hospital.mp4" type="video/mp4">
+                </video>
+                <span>Juntos em tudo 💕</span>
+            </div>
+
         </main>
 
         <!-- BOTÃO SURPRESA -->
@@ -148,7 +183,7 @@
         <!-- MODAL FOTO -->
         <div class="modal" id="modal">
             <span class="fechar" onclick="fecharImagem()">✖</span>
-            <img id="imagemGrande" alt="Foto ampliada">
+            <img id="imagemGrande">
         </div>
 
         <!-- MODAL SURPRESA -->
@@ -169,9 +204,7 @@
 
     </div>
 
-    <!-- JS PRINCIPAL -->
     <script src="namoro.js"></script>
-
 </body>
 
 </html>

@@ -85,6 +85,7 @@ body {
     body {
         padding-top: env(safe-area-inset-top);
     }
+
     #site {
         padding-top: calc(30px + env(safe-area-inset-top));
     }
@@ -92,7 +93,9 @@ body {
 
 /* Fallback: smaller top padding on iPhone-ish small screens */
 @media (max-width: 480px) {
-    #site { padding-top: 12px; }
+    #site {
+        padding-top: 12px;
+    }
 }
 
 #site {
@@ -155,7 +158,7 @@ header p {
     position: absolute;
     left: 12px;
     bottom: 12px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     padding: 8px 10px;
     border-radius: 10px;
     font-size: 14px;
@@ -174,7 +177,7 @@ header p {
     color: white;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 6px 18px rgba(255,0,51,0.3);
+    box-shadow: 0 6px 18px rgba(255, 0, 51, 0.3);
 }
 
 /* MODAIS */
@@ -184,7 +187,7 @@ header p {
     inset: 0;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 10000;
 }
 
@@ -201,7 +204,7 @@ header p {
     max-width: 92%;
     max-height: 82vh;
     border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 #modalSurpresa .caixa-surpresa {
@@ -210,7 +213,7 @@ header p {
     border-radius: 12px;
     max-width: 720px;
     width: calc(100% - 40px);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
     color: #222;
 }
 
@@ -236,7 +239,7 @@ button {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 14px;
     }
-    
+
     #site {
         padding: 24px 12px 50px;
     }
@@ -246,39 +249,39 @@ button {
     .box-inicial {
         padding: 32px;
     }
-    
+
     .box-inicial h1 {
         font-size: 32px;
     }
-    
+
     .box-inicial p {
         font-size: 15px;
     }
-    
+
     .galeria {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 12px;
     }
-    
+
     .foto img {
         height: 180px;
     }
-    
+
     header h1 {
         font-size: 28px;
     }
-    
+
     .modal-prev,
     .modal-next {
         font-size: 18px;
         padding: 10px 12px;
     }
-    
+
     #imagemGrande {
         max-width: 95%;
         max-height: 75vh;
     }
-    
+
     .modal .fechar {
         font-size: 24px;
         top: 14px;
@@ -290,7 +293,7 @@ button {
     body {
         font-size: 14px;
     }
-    
+
     .box-inicial {
         padding: 24px;
     }
@@ -298,11 +301,11 @@ button {
     .box-inicial h1 {
         font-size: 28px;
     }
-    
+
     .box-inicial p {
         font-size: 14px;
     }
-    
+
     .box-inicial button {
         padding: 12px 32px;
         font-size: 16px;
@@ -320,15 +323,15 @@ button {
     header h1 {
         font-size: 24px;
     }
-    
+
     header p {
         font-size: 13px;
     }
-    
+
     #contador {
         font-size: 13px;
     }
-    
+
     .modal-prev,
     .modal-next {
         font-size: 16px;
@@ -338,7 +341,7 @@ button {
         min-width: 40px;
         min-height: 40px;
     }
-    
+
     .modal .fechar {
         width: 40px;
         height: 40px;
@@ -346,28 +349,28 @@ button {
         min-height: 40px;
         font-size: 22px;
     }
-    
+
     #imagemGrande {
         max-width: 98%;
         max-height: 70vh;
     }
-    
+
     .modal-caption {
         bottom: 18px;
         font-size: 13px;
         padding: 6px 10px;
     }
-    
+
     .area-surpresa button {
         padding: 8px 14px;
         font-size: 15px;
     }
-    
+
     #modalSurpresa .caixa-surpresa {
         padding: 20px;
         max-width: calc(100% - 32px);
     }
-    
+
     #modalSurpresa .caixa-surpresa h2 {
         font-size: 18px;
         margin-bottom: 12px;
@@ -378,28 +381,28 @@ button {
     #site {
         padding: 8px 10px 30px;
     }
-    
+
     .box-inicial {
         padding: 20px;
     }
-    
+
     .box-inicial h1 {
         font-size: 24px;
     }
-    
+
     .galeria {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 8px;
     }
-    
+
     .foto img {
         height: 130px;
     }
-    
+
     header h1 {
         font-size: 20px;
     }
-    
+
     .modal-prev,
     .modal-next {
         font-size: 14px;
@@ -409,7 +412,7 @@ button {
         min-width: 36px;
         min-height: 36px;
     }
-    
+
     .modal .fechar {
         width: 36px;
         height: 36px;
@@ -418,9 +421,92 @@ button {
         top: 10px;
         right: 10px;
     }
-    
+
     #imagemGrande {
         max-width: 100%;
         max-height: 65vh;
+    }
+}
+
+/* ========================= */
+/* ÁREA DOS VÍDEOS           */
+/* ========================= */
+
+.area-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 26px 0;
+    justify-items: center;
+}
+
+.area-videos video {
+    width: 100%;
+    max-width: 260px;
+    /* TAMANHO MÁXIMO DO VÍDEO */
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background: #000;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .area-videos video {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .area-videos video {
+        max-width: 170px;
+    }
+}
+
+/* ========================= */
+/* AJUSTE ESPECÍFICO DOS VÍDEOS */
+/* ========================= */
+
+.foto.video {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto.video video {
+    width: 100%;
+    max-width: 240px;
+    /* TAMANHO IDEAL */
+    height: 160px;
+    /* ALTURA CONTROLADA */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background: #000;
+}
+
+/* Ajuste no texto abaixo do vídeo */
+.foto.video span {
+    margin-top: 8px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #333;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .foto.video video {
+        max-width: 200px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .foto.video video {
+        max-width: 170px;
+        height: 120px;
     }
 }
