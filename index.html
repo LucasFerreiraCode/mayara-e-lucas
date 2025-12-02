@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas & Mayara ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +24,7 @@
         <source src="./musica.mp3/Seja Para Mim Ao Vivo Em São Paulo.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- SITE PRINCIPAL -->
+    <!-- SITE -->
     <div id="site" style="display:none;">
 
         <header>
@@ -33,157 +33,72 @@
             <div id="contador"></div>
         </header>
 
-        <!-- GALERIA -->
-        <main class="galeria">
+        <!-- ================= SLIDER ================= -->
+        <section class="slider">
+            <div class="slides">
 
-            <!-- FOTOS -->
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto1.jpeg">
-                <span>O começo de tudo 💕</span>
+                <!-- FOTOS -->
+                <div class="slide foto"><img src="./Img.amor/foto1.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto2.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto3.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto4.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto5.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto6.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto7.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto.08rio.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto9.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto10.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto11.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto12.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto13.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto14.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto15.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto16.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto17.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto18.jpeg" alt=""></div>
+                <div class="slide foto"><img src="./Img.amor/foto19.jpeg" alt=""></div>
+
+                <!-- VÍDEOS -->
+                <div class="slide video">
+                    <video muted playsinline preload="metadata">
+                        <source src="./videos/nos-no-costao.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="slide video">
+                    <video muted playsinline preload="metadata">
+                        <source src="./videos/nos-na-praia.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="slide video">
+                    <video muted playsinline preload="metadata">
+                        <source src="./videos/andando-de-moto.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="slide video">
+                    <video muted playsinline preload="metadata">
+                        <source src="./videos/nos-furando-parede.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="slide video">
+                    <video muted playsinline preload="metadata">
+                        <source src="./videos/hospital.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- CONTROLES -->
+                <button class="prev" onclick="slideAnterior()">❮</button>
+                <button class="next" onclick="proximoSlide()">❯</button>
+
             </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto2.jpeg">
-                <span>Seu sorriso mudou tudo 😍</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto3.jpeg">
-                <span>Momentos eternos ❤️</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto4.jpeg">
-                <span>Meu lugar é ao seu lado 💑</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto5.jpeg">
-                <span>Nosso amor só cresce 💖</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto6.jpeg">
-                <span>Minha felicidade tem seu nome 😘</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto7.jpeg">
-                <span>Momentos que ficam no coração ❤️</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto.08rio.jpeg">
-                <span>Te escolheria mil vezes 💕</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto9.jpeg">
-                <span>Só nós dois 😍</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto10.jpeg">
-                <span>Você é meu lar 🏡</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto11.jpeg">
-                <span>Nosso para sempre ❤️</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto12.jpeg">
-                <span>Meu melhor plano é você 💑</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto13.jpeg">
-                <span>Te amo em todos os detalhes 💕</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto14.jpeg">
-                <span>Amor que transborda 😘</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto15.jpeg">
-                <span>Minha pessoa favorita ❤️</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto16.jpeg">
-                <span>Com você tudo é melhor 💖</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto17.jpeg">
-                <span>Te escolher todo dia 😍</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto18.jpeg">
-                <span>Você é meu destino 💕</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto19.jpeg">
-                <span>Meu coração é seu ❤️</span>
-            </div>
-
-            <div class="foto" onclick="abrirImagem(this)">
-                <img src="./Img.amor/foto20.jpeg">
-                <span>Nosso amor é infinito ♾️</span>
-            </div>
-
-            <!-- VÍDEOS (AUTOPLAY EM LOOP) -->
-            <div class="foto video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./videos/nos-no-costao.mp4" type="video/mp4">
-                </video>
-                <span>Nosso dia no costão 🌊</span>
-            </div>
-
-            <div class="foto video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./videos/nos-na-praia.mp4" type="video/mp4">
-                </video>
-                <span>Dia na praia 🏖️</span>
-            </div>
-
-            <div class="foto video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./videos/andando-de-moto.mp4" type="video/mp4">
-                </video>
-                <span>Passeio de moto 🏍️</span>
-            </div>
-
-            <div class="foto video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./videos/nos-furando-parede.mp4" type="video/mp4">
-                </video>
-                <span>Construindo sonhos 🛠️❤️</span>
-            </div>
-
-            <div class="foto video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./videos/hospital.mp4" type="video/mp4">
-                </video>
-                <span>Juntos em tudo 💕</span>
-            </div>
-
-        </main>
+        </section>
 
         <!-- BOTÃO SURPRESA -->
         <div class="area-surpresa">
             <button onclick="mostrarSurpresa()">Clique aqui 💌</button>
-        </div>
-
-        <!-- MODAL FOTO -->
-        <div class="modal" id="modal">
-            <span class="fechar" onclick="fecharImagem()">✖</span>
-            <img id="imagemGrande">
         </div>
 
         <!-- MODAL SURPRESA -->

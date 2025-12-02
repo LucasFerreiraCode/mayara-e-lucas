@@ -22,14 +22,27 @@ atualizarContador();
 
 
 // ===========================
-// CONFIGURAÇÃO DO TRECHO DA MÚSICA
+// CONFIGURAÇÃO DA MÚSICA
 // ===========================
 const inicioMusica = 20;
 const fimMusica = 130;
 
 
 // ===========================
-// BOTÃO ENTRAR + MÚSICA + AUTO-PLAY DOS VÍDEOS
+// VARIÁVEIS DO SLIDER
+// ===========================
+let slides = [];
+let fotos = [];
+let videos = [];
+
+let ordemSlides = [];
+let slideAtual = 0;
+let tempoFoto = 6000;
+let timeoutSlider = null;
+
+
+// ===========================
+// BOTÃO ENTRAR + MÚSICA + SLIDER
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
     const botao = document.getElementById("btnEntrar");
@@ -37,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const site = document.getElementById("site");
     const musica = document.getElementById("musica");
 
-    const videos = document.querySelectorAll(".foto video");
+    slides = Array.from(document.querySelectorAll(".slide"));
+    fotos = Array.from(document.querySelectorAll(".slide.foto"));
+    videos = Array.from(document.querySelectorAll(".slide.video"));
 
     if (botao) {
         botao.addEventListener("click", () => {
@@ -46,13 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
             telaInicial.style.display = "none";
             site.style.display = "block";
 
-            // TOCAR TRECHO DA MÚSICA COM FADE-IN
+            // TOCAR MÚSICA COM FADE-IN
             if (musica) {
                 musica.currentTime = inicioMusica;
                 musica.volume = 0;
-                musica.play().catch(err => {
-                    console.log("Erro ao tocar música:", err);
-                });
+                musica.play().catch(() => { });
 
                 const volumeFinal = 0.6;
                 const passo = 0.02;
@@ -74,28 +87,89 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            // AUTO-PLAY + LOOP DOS VÍDEOS
-            videos.forEach(video => {
-                video.muted = true;
-                video.loop = true;
-                video.play().catch(() => { });
-            });
-
-            // SCROLL PARA TOPO
-            try {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            } catch (e) {
-                window.scrollTo(0, 0);
+            // ✅ INICIAR SLIDER CORRIGIDO
+            if (slides.length > 0) {
+                iniciarSlider();
             }
 
-            // ACESSIBILIDADE
-            try {
-                site.setAttribute("tabindex", "-1");
-                site.focus();
-            } catch (e) { }
+            window.scrollTo(0, 0);
         });
     }
 });
+
+
+// ===========================
+// SLIDER FIXO: 1 VÍDEO > 1 FOTO > RESTO FOTOS
+// ===========================
+function iniciarSlider() {
+    ordemSlides = [];
+    const max = Math.max(fotos.length, videos.length);
+
+    // Intercala: vídeo > foto
+    for (let i = 0; i < max; i++) {
+        if (videos[i]) ordemSlides.push(videos[i]);
+        if (fotos[i]) ordemSlides.push(fotos[i]);
+    }
+
+    // Se sobrar só fotos, adiciona elas no final
+    if (fotos.length > videos.length) {
+        const resto = fotos.slice(videos.length);
+        resto.forEach(foto => {
+            if (!ordemSlides.includes(foto)) ordemSlides.push(foto);
+        });
+    }
+
+    slides = ordemSlides;
+    slideAtual = 0;
+    mostrarSlide(slideAtual);
+}
+
+function mostrarSlide(index) {
+    if (timeoutSlider) clearTimeout(timeoutSlider);
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+
+        const video = slide.querySelector("video");
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+
+    const slide = slides[index];
+    slide.classList.add("active");
+
+    const video = slide.querySelector("video");
+
+    if (video) {
+        video.muted = true;
+        video.play();
+
+        video.onended = () => {
+            proximoSlide();
+        };
+
+    } else {
+        timeoutSlider = setTimeout(() => {
+            proximoSlide();
+        }, tempoFoto);
+    }
+}
+
+function proximoSlide() {
+    slideAtual++;
+    if (slideAtual >= slides.length) {
+        slideAtual = 0;
+    }
+    mostrarSlide(slideAtual);
+}
+
+function slideAnterior() {
+    slideAtual--;
+    if (slideAtual < 0) slideAtual = slides.length - 1;
+    mostrarSlide(slideAtual);
+}
 
 
 // ===========================
@@ -113,6 +187,7 @@ function abrirImagem(elemento) {
 function fecharImagem() {
     document.getElementById("modal").style.display = "none";
 }
+
 
 // ===========================
 // VÍDEO EM TELA CHEIA COM SOM
