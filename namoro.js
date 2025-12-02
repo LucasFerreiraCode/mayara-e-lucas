@@ -22,13 +22,20 @@ atualizarContador();
 
 
 // ===========================
-// BOTÃO ENTRAR + PLAYER YOUTUBE
+// CONFIGURAÇÃO DO TRECHO DA MÚSICA
+// ===========================
+const inicioMusica = 20;   // 00:20
+const fimMusica = 130;    // 02:10
+
+
+// ===========================
+// BOTÃO ENTRAR + TRECHO DA MÚSICA COM FADE-IN
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
     const botao = document.getElementById("btnEntrar");
     const telaInicial = document.getElementById("telaInicial");
     const site = document.getElementById("site");
-    const ytFrame = document.getElementById("ytFrame");
+    const musica = document.getElementById("musica");
 
     if (botao) {
         botao.addEventListener("click", () => {
@@ -37,15 +44,39 @@ document.addEventListener("DOMContentLoaded", () => {
             telaInicial.style.display = "none";
             site.style.display = "block";
 
-            // --- INICIAR MÚSICA DO YOUTUBE ---
-            if (ytFrame) {
-                ytFrame.src =
-                    "https://www.youtube.com/embed/nGGxZe3I2DE?autoplay=1&loop=1&playlist=nGGxZe3I2DE";
+            // --- TOCAR TRECHO DA MÚSICA COM FADE-IN ---
+            if (musica) {
+                musica.currentTime = inicioMusica;
+                musica.volume = 0; // começa sem som
+                musica.play().catch(err => {
+                    console.log("Erro ao tocar música:", err);
+                });
+
+                // FADE-IN ROMÂNTICO
+                const volumeFinal = 0.6;
+                const passo = 0.02;     // velocidade do aumento
+                const intervaloFade = 150; // intervalo em ms
+
+                const fade = setInterval(() => {
+                    if (musica.volume < volumeFinal) {
+                        musica.volume = Math.min(musica.volume + passo, volumeFinal);
+                    } else {
+                        clearInterval(fade);
+                    }
+                }, intervaloFade);
+
+                // LOOP DO TRECHO
+                musica.addEventListener("timeupdate", () => {
+                    if (musica.currentTime >= fimMusica) {
+                        musica.currentTime = inicioMusica;
+                        musica.play();
+                    }
+                });
             }
 
             // --- SCROLL PARA TOPO ---
             try {
-                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             } catch (e) {
                 window.scrollTo(0, 0);
             }
